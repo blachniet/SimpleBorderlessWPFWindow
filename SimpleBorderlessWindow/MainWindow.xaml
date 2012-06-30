@@ -1,11 +1,36 @@
 ﻿<Window x:Class="SimpleBorderlessWindow.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="562" Width="1000"
+        Title="MainWindow"
+        Height="562"
+        Width="1000"
         WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="CanResizeWithGrip">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <TextBlock DockPanel.Dock="Right"
+                       Text="r"
+                       FontFamily="Webdings" 
+                       FontSize="16"
+                       VerticalAlignment="Center"/>
+            <TextBlock DockPanel.Dock="Right"
+                       Text="0"
+                       FontFamily="Webdings"
+                       FontSize="16"
+                       VerticalAlignment="Center"/>
+            <StatusBar Background="Transparent">
+                <TextBlock DockPanel.Dock="Left"
+                           Text="SimpleBorderlessWindow"
+                           FontSize="16"/>
+            </StatusBar>
+
+        </DockPanel>
+
+        <Grid>
+            <TextBlock Text="Window Content Here"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+        </Grid>
+    </DockPanel>
 </Window>
