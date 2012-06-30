@@ -7,19 +7,36 @@
         WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="CanResizeWithGrip">
+    <Window.Resources>
+        <Style x:Key="GrayOnMouseOver" TargetType="{x:Type TextBlock}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver"
+                         Value="True">
+                    <Setter Property="Foreground"
+                            Value="Gray" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <DockPanel>
         <DockPanel DockPanel.Dock="Top">
             <TextBlock DockPanel.Dock="Right"
                        Text="r"
                        FontFamily="Webdings" 
                        FontSize="16"
-                       VerticalAlignment="Center"/>
+                       VerticalAlignment="Center"
+                       MouseLeftButtonUp="TriggerClose"
+                       Style="{StaticResource GrayOnMouseOver}" />
             <TextBlock DockPanel.Dock="Right"
                        Text="0"
                        FontFamily="Webdings"
                        FontSize="16"
-                       VerticalAlignment="Center"/>
-            <StatusBar Background="Transparent">
+                       VerticalAlignment="Center"
+                       MouseLeftButtonUp="TriggerMinimize"
+                       Style="{StaticResource GrayOnMouseOver}"/>
+            <StatusBar Background="Transparent"
+                       MouseLeftButtonDown="StatusBar_MouseLeftButtonDown"
+                       MouseDoubleClick="StatusBar_MouseDoubleClick">
                 <TextBlock DockPanel.Dock="Left"
                            Text="SimpleBorderlessWindow"
                            FontSize="16"/>

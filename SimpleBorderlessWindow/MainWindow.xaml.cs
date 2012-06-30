@@ -23,5 +23,28 @@ namespace SimpleBorderlessWindow
         {
             InitializeComponent();
         }
+
+        private void StatusBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void StatusBar_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (WindowState == System.Windows.WindowState.Maximized)
+                WindowState = System.Windows.WindowState.Normal;
+            else if (WindowState == System.Windows.WindowState.Normal)
+                WindowState = System.Windows.WindowState.Maximized;
+        }
+
+        private void TriggerClose(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
+
+        private void TriggerMinimize(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = System.Windows.WindowState.Minimized;
+        }
     }
 }
