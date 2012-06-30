@@ -37,12 +37,12 @@ namespace SimpleBorderlessWindow
                 WindowState = System.Windows.WindowState.Maximized;
         }
 
-        private void TriggerClose(object sender, MouseButtonEventArgs e)
+        private void TriggerClose(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void TriggerMinimize(object sender, MouseButtonEventArgs e)
+        private void TriggerMinimize(object sender, RoutedEventArgs e)
         {
             WindowState = System.Windows.WindowState.Minimized;
         }
