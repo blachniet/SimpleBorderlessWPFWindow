@@ -41,8 +41,8 @@
                            Style="{StaticResource WindowIconStyle}">0</Hyperlink>
             </TextBlock>
             <StatusBar Background="Transparent"
-                       MouseLeftButtonDown="StatusBar_MouseLeftButtonDown"
-                       MouseDoubleClick="StatusBar_MouseDoubleClick">
+                       MouseDoubleClick="TriggerMaximize"
+                       MouseMove="TriggerMoveWindow">
                 <TextBlock DockPanel.Dock="Left"
                            Text="SimpleBorderlessWindow"
                            FontSize="16"/>
